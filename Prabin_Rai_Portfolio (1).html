@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Prabin Rai is an aspiring AI Architect building AI-powered systems, automation, and scalable software with a focus on cloud engineering, backend development, and reliable architecture." />
+    <meta property="og:title" content="Prabin Rai | Aspiring AI Architect" />
+    <meta property="og:description" content="Computer Science student focused on AI systems, cloud engineering, and intelligent automation." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Prabin Rai | Aspiring AI Architect" />
+    <meta name="twitter:description" content="Computer Science student focused on AI systems, cloud engineering, and intelligent automation." />
+    <meta name="theme-color" content="#0d0f11" />
+    <meta name="color-scheme" content="dark" />
+    <title>Prabin Rai | Aspiring AI Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #0d0f11;
+        --surface: #15181b;
+        --surface-alt: #101214;
+        --line: #292e32;
+        --ink: #f2f4f5;
+        --ink-soft: #c1c8cc;
+        --muted: #929ca2;
+        --teal: #38b8c5;
+        --teal-dark: #2199a6;
+        --teal-soft: rgba(56, 184, 197, 0.1);
+        --gold: #54c6d1;
+        --navy: #090b0d;
+        --navy-alt: #15191c;
+        --navy-text: #f2f4f5;
+        --navy-muted: #b0b8bd;
+        --shadow: 0 20px 55px rgba(0, 0, 0, 0.35);
+        --radius: 12px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.65;
+        overflow-x: hidden;
+      }
+      img { max-width: 100%; display: block; }
+      a { color: inherit; text-decoration: none; }
+      button, input, textarea { font: inherit; }
+      ::selection { background: var(--teal); color: #fff; }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 0.75rem;
+        left: 0.75rem;
+        padding: 0.7rem 1rem;
+        border-radius: 8px;
+        background: var(--teal);
+        color: #071013;
+        font-weight: 700;
+        transform: translateY(-160%);
+      }
+      .skip-link:focus { transform: translateY(0); }
+      .display { font-family: "Space Grotesk", sans-serif; }
+      .mono { font-family: "JetBrains Mono", monospace; }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        backdrop-filter: blur(10px);
+        background: rgba(13, 15, 17, 0.94);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 78px;
+        gap: 24px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        font-size: 0.88rem;
+        color: #b3bbc0;
+      }
+      .nav-links a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        color: #b3bbc0;
+        font-size: 0.88rem;
+        font-weight: 500;
+        user-select: none;
+        transition: color 0.2s ease;
+      }
+      .nav-links a:hover,
+      .nav-links a:focus-visible,
+      .nav-links a:active,
+      .nav-links a[aria-current="location"] { color: var(--teal); }
+      .nav-toggle {
+        display: none;
+        border: 1px solid var(--line);
+        background: transparent;
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        color: var(--ink);
+        cursor: pointer;
+      }
+      .nav.open .nav-links {
+        display: flex;
+      }
+
+      a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+        outline: 2px solid var(--teal);
+        outline-offset: 3px;
+      }
+
+      .hero {
+        position: relative;
+        background: var(--navy);
+        color: var(--navy-text);
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 20% 10%, rgba(31, 111, 120, 0.26), transparent 34%), radial-gradient(circle at 80% 18%, rgba(169, 119, 47, 0.12), transparent 24%);
+      }
+      .hero-grid {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+        gap: 54px;
+        align-items: center;
+        padding: 7rem 0 5rem;
+      }
+      .hero-copy { max-width: 700px; }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.58rem 0.9rem;
+        border: 1px solid rgba(31, 111, 120, 0.45);
+        border-radius: 999px;
+        background: rgba(31, 111, 120, 0.08);
+        color: #9fd7dd;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.74rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--teal);
+        box-shadow: 0 0 0 4px rgba(31, 111, 120, 0.18);
+      }
+      h1 {
+        margin: 1.3rem 0 1rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+        line-height: 1.02;
+        letter-spacing: -0.06em;
+      }
+      .hero-copy p {
+        margin: 0;
+        max-width: 620px;
+        color: var(--navy-muted);
+        font-size: 1.12rem;
+      }
+      .highlight { color: #ffffff; font-weight: 600; }
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        min-height: 48px;
+        padding: 0.8rem 1.3rem;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        font-weight: 600;
+        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn-primary {
+        background: var(--teal);
+        color: #fff;
+      }
+      .btn-primary:hover { background: #2d878f; }
+      .btn-secondary {
+        background: transparent;
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.22);
+      }
+      .btn-secondary:hover { border-color: rgba(255, 255, 255, 0.65); }
+      .btn-plain {
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--navy-text);
+        border-color: rgba(255, 255, 255, 0.12);
+      }
+      .hero-meta {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.4rem;
+        color: #dfe8eb;
+        font-size: 0.88rem;
+      }
+      .hero-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .hero-meta span::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gold);
+      }
+
+      .hero-panel {
+        position: relative;
+        padding: 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: var(--shadow);
+      }
+      .profile-card {
+        display: grid;
+        gap: 1rem;
+        padding: 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        background: rgba(245, 248, 249, 0.04);
+      }
+      .mini-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9fd7dd;
+      }
+      .profile-name {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+        font-weight: 600;
+        letter-spacing: -0.05em;
+      }
+      .profile-role {
+        color: var(--navy-muted);
+        font-size: 0.98rem;
+      }
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 30px;
+        padding: 0.35rem 0.7rem;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 999px;
+        color: #dfe8eb;
+        background: rgba(255, 255, 255, 0.03);
+        font-size: 0.72rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .stack {
+        display: grid;
+        gap: 0.85rem;
+        margin-top: 1.1rem;
+      }
+      .stack-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.85rem 0.9rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+      .stack-card strong {
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      .stack-card span {
+        color: var(--navy-muted);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72rem;
+      }
+
+      section {
+        padding: 6.5rem 0;
+      }
+      section[id] { scroll-margin-top: 92px; }
+      .section-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 2.8rem;
+      }
+      .section-header h2 {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        letter-spacing: -0.05em;
+        font-size: clamp(2rem, 3vw, 2.7rem);
+      }
+      .section-kicker {
+        margin-bottom: 0.7rem;
+        color: var(--teal);
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 0.74rem;
+      }
+      .section-deck {
+        max-width: 620px;
+        color: var(--muted);
+        margin: 0;
+      }
+
+      #about {
+        background: var(--surface);
+        border-bottom: 1px solid var(--line);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 2.8rem;
+      }
+      .about-copy p {
+        margin: 0 0 1.3rem;
+        color: var(--ink-soft);
+        font-size: 1.04rem;
+      }
+      .about-copy p:last-child { margin-bottom: 0; }
+      .highlight-ink { color: var(--ink); font-weight: 600; }
+      .focus-panel {
+        padding: 1.6rem;
+        border: 1px solid var(--line);
+        background: var(--surface-alt);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+      .focus-panel h3 {
+        margin: 0 0 1.1rem;
+        font-size: 1.03rem;
+        font-family: "Space Grotesk", sans-serif;
+      }
+      .focus-list {
+        display: grid;
+        gap: 0.8rem;
+      }
+      .focus-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .focus-item:last-child { border-bottom: none; }
+      .focus-item strong {
+        font-size: 0.96rem;
+      }
+      .focus-item span {
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72rem;
+      }
+
+      #skills {
+        background: var(--surface);
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.2rem;
+      }
+      .skill-card {
+        padding: 1.55rem 1.35rem;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .skill-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(31, 111, 120, 0.4);
+        box-shadow: 0 12px 24px rgba(20, 32, 43, 0.05);
+      }
+      .skill-card h3 {
+        margin: 0 0 1rem;
+        color: var(--gold);
+        font-size: 0.97rem;
+        letter-spacing: 0.02em;
+      }
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.48rem 0.7rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface-alt);
+        color: var(--ink-soft);
+        font-size: 0.73rem;
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      #projects {
+        background: var(--surface-alt);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+        gap: 1.25rem;
+      }
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.6rem;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(31, 111, 120, 0.35);
+        box-shadow: 0 16px 30px rgba(20, 32, 43, 0.06);
+      }
+      .project-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 1rem;
+      }
+      .project-number {
+        color: rgba(20, 32, 43, 0.18);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+      .project-card h3 {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: -0.04em;
+      }
+      .project-category {
+        display: inline-flex;
+        width: fit-content;
+        padding: 0.33rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(31, 111, 120, 0.08);
+        border: 1px solid rgba(31, 111, 120, 0.16);
+        color: var(--teal-dark);
+        font-size: 0.67rem;
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .project-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+        flex: 1;
+      }
+      .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem 1rem;
+        margin-top: auto;
+      }
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.42rem;
+        color: var(--teal);
+        font-weight: 600;
+        font-size: 0.83rem;
+      }
+      .project-link:hover { text-decoration: underline; }
+
+      #education {
+        background: var(--surface);
+      }
+      .education-wrap {
+        max-width: 860px;
+      }
+      .education-title {
+        margin: 0;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2rem, 3vw, 2.7rem);
+        letter-spacing: -0.05em;
+      }
+      .education-list {
+        position: relative;
+        margin-left: 12px;
+        padding-left: 42px;
+        border-left: 1px solid rgba(31, 111, 120, 0.35);
+        list-style: none;
+      }
+      .education-item {
+        position: relative;
+        padding: 0 0 2rem;
+      }
+      .education-item:last-child {
+        padding-bottom: 0;
+      }
+      .education-item::before {
+        content: "";
+        position: absolute;
+        left: -52px;
+        top: 10px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--surface);
+        border: 2px solid var(--teal);
+        box-shadow: 0 0 0 5px rgba(31, 111, 120, 0.10);
+      }
+      .education-item.current::before {
+        background: var(--teal);
+      }
+      .education-year {
+        margin: 0 0 0.7rem;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.76rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+      .education-item h3 {
+        margin: 0 0 0.15rem;
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.95rem, 2vw, 2.5rem);
+        letter-spacing: -0.05em;
+        font-weight: 700;
+      }
+      .education-item p {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+        line-height: 1.35;
+      }
+
+      #certifications {
+        background: var(--surface-alt);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+        gap: 1.2rem;
+      }
+      .cert-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        padding: 1.5rem;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+      }
+      .cert-issuer {
+        color: var(--gold);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-family: "JetBrains Mono", monospace;
+      }
+      .cert-card h3 {
+        margin: 0;
+        font-size: 1.12rem;
+        font-family: "Space Grotesk", sans-serif;
+        letter-spacing: -0.04em;
+      }
+      .cert-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+      .cert-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+      .cert-meta .tag {
+        background: rgba(31, 111, 120, 0.04);
+      }
+      .cert-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.8rem;
+        margin-top: auto;
+        padding-top: 0.4rem;
+        border-top: 1px solid var(--line);
+      }
+      .cert-id {
+        color: var(--ink-soft);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.72rem;
+      }
+      .verify-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.55rem 0.8rem;
+        border-radius: 8px;
+        background: transparent;
+        border: 1px solid rgba(31, 111, 120, 0.35);
+        color: var(--teal-dark);
+        font-weight: 600;
+        font-size: 0.74rem;
+      }
+      .verify-btn:hover { background: rgba(31, 111, 120, 0.04); }
+
+      #contact {
+        background: var(--surface);
+      }
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1.05fr;
+        gap: 1.4rem;
+      }
+      .contact-cards {
+        display: grid;
+        gap: 1rem;
+      }
+      .contact-card {
+        padding: 1.3rem 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--surface-alt);
+      }
+      .contact-label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--muted);
+        font-size: 0.75rem;
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .contact-link {
+        color: var(--ink);
+        font-size: 1.02rem;
+        font-weight: 600;
+      }
+      .contact-link:hover { text-decoration: underline; }
+      .github-links {
+        display: grid;
+        gap: 0.7rem;
+      }
+      .github-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        padding: 1rem 1.1rem;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--surface);
+      }
+      .github-card strong {
+        font-size: 0.86rem;
+      }
+      .github-card a {
+        color: var(--teal);
+        font-size: 0.82rem;
+        font-weight: 600;
+      }
+      .form-box {
+        padding: 1.4rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: var(--surface-alt);
+      }
+      .contact-form {
+        display: grid;
+        gap: 1rem;
+      }
+      .field {
+        display: grid;
+        gap: 0.45rem;
+      }
+      .field label {
+        font-size: 0.76rem;
+        font-family: "JetBrains Mono", monospace;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .field input, .field textarea {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 0.85rem 0.9rem;
+        background: var(--surface);
+        color: var(--ink);
+      }
+      .field textarea {
+        min-height: 150px;
+        resize: vertical;
+      }
+      .form-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+      .form-status {
+        margin: 0;
+        font-size: 0.9rem;
+        min-height: 1.4em;
+      }
+      .form-status[data-state="success"] { color: #65d6a6; }
+      .form-status[data-state="error"] { color: #ff8d8d; }
+      .send-btn:disabled { opacity: 0.7; cursor: wait; }
+      .send-btn {
+        width: fit-content;
+      }
+
+      footer {
+        padding: 1.3rem 0 2.2rem;
+        border-top: 1px solid var(--line);
+        background: var(--surface);
+      }
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        color: var(--muted);
+        font-size: 0.83rem;
+      }
+
+      @media (max-width: 900px) {
+        .nav {
+          position: relative;
+          min-height: 72px;
+        }
+        .nav-toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .nav-links {
+          position: absolute;
+          top: calc(100% + 8px);
+          left: 0;
+          right: 0;
+          display: none;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          padding: 1rem 1rem 1.1rem;
+          background: #101315;
+          border: 1px solid var(--line);
+          border-radius: 12px;
+          box-shadow: var(--shadow);
+        }
+        .hero-grid, .about-grid, .contact-wrap { grid-template-columns: 1fr; }
+        .hero-grid { padding-top: 6rem; }
+      }
+
+      @media (max-width: 640px) {
+        .section-header {
+          display: block;
+          margin-bottom: 2rem;
+        }
+        .timeline-item {
+          grid-template-columns: 18px 1fr;
+        }
+        .timeline-year {
+          grid-column: 2;
+        }
+        .timeline-body {
+          grid-column: 2;
+        }
+        .footer-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      .nav-toggle { color: var(--ink); border-color: var(--line); }
+      .hero { min-height: min(760px, calc(100vh - 78px)); background: #080a0b; }
+      .hero::before { background: linear-gradient(90deg, rgba(7, 9, 10, .96) 0%, rgba(7, 9, 10, .83) 45%, rgba(7, 9, 10, .25) 100%); z-index: 1; pointer-events: none; }
+      .hero-grid { min-height: min(760px, calc(100vh - 78px)); grid-template-columns: minmax(0, 1fr) minmax(280px, .9fr); gap: 3rem; padding: 5rem 0; }
+      .hero-copy { z-index: 2; }
+      .hero h1 {
+        max-width: 680px;
+        margin-bottom: 1.25rem;
+        font-size: clamp(3.2rem, 6.3vw, 5.6rem);
+        line-height: 1;
+        letter-spacing: -0.055em;
+        text-transform: none;
+      }
+      .hero-role {
+        display: block;
+        margin-top: 0.28em;
+        color: var(--teal);
+        font-size: 0.48em;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.035em;
+      }
+      .hero-copy p { max-width: 570px; color: #c2c8cc; font-size: 1.05rem; line-height: 1.75; }
+      .eyebrow { border: 0; padding: 0; background: none; color: var(--teal); }
+      .eyebrow::before { display: none; }
+      .hero-panel { min-height: 390px; padding: 0; border: 0; border-radius: 4px; background: transparent; box-shadow: none; }
+      .profile-card, .stack { display: none; }
+      .workstation-visual { position: absolute; inset: 0; overflow: hidden; border-radius: 4px; background: #121719; }
+      .workstation-visual img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.68) saturate(.72); }
+      .workstation-visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(7, 9, 10, .36), transparent 60%); }
+      .hero-meta { color: #d3d9dc; }
+      .hero-meta span::before { background: var(--teal); }
+      .btn { border-radius: 4px; }
+      .btn-primary { background: var(--teal); color: #071013; }
+      .btn-primary:hover { background: #67d4dd; }
+      .btn-secondary, .btn-plain { border-color: #727d83; color: #f5f7f8; background: rgba(8, 10, 11, .38); }
+      section, #about, #skills, #projects, #education, #certifications, #contact { background: var(--bg); border-color: var(--line); }
+      #about, #education, #contact { background: #111416; }
+      .section-header h2, .education-title { color: #f3f5f6; }
+      .section-deck, .about-copy p, .project-card p, .cert-card p, .timeline-body p { color: var(--muted); }
+      .focus-panel, .skill-card, .project-card, .cert-card, .timeline-item, .contact-card, .form-box, .github-card { background: var(--surface); border-color: var(--line); box-shadow: none; }
+      .focus-panel h3, .focus-item strong, .skill-card h3, .project-card h3, .cert-card h3, .timeline-body h3 { color: var(--ink); }
+      .tag { background: #1d2226; border-color: #30373b; color: #c3cbd0; }
+      .project-category { background: rgba(56, 184, 197, .08); border-color: rgba(56, 184, 197, .25); color: #64d0d9; }
+      .project-number { color: rgba(230, 238, 241, .25); }
+      .project-link, .github-card a { color: #62cbd4; }
+      .education-list { border-color: rgba(56, 184, 197, .38); }
+      .education-item::before { background: var(--bg); border-color: var(--teal); }
+      .education-item.current::before { background: var(--teal); }
+      .education-item h3 { color: var(--ink); }
+      .education-item p { color: var(--muted); }
+      .education-year, .cert-issuer, .section-kicker { color: var(--teal); }
+      .cert-foot { border-color: var(--line); }
+      .cert-id { display: block; color: #bac3c8; }
+      .verify-btn { border-color: var(--teal); color: var(--teal); }
+      .field input, .field textarea { background: #0e1113; border-color: #333a3f; color: var(--ink); }
+      footer { background: #090b0d; border-color: var(--line); }
+      .filter-row { display: flex; flex-wrap: wrap; gap: .55rem; margin: -1.6rem 0 2rem; }
+      .filter-btn { border: 1px solid #343c41; border-radius: 999px; padding: .5rem .85rem; background: transparent; color: #b8c0c5; cursor: pointer; font-size: .78rem; }
+      .filter-btn:hover, .filter-btn[aria-pressed="true"] { border-color: var(--teal); color: var(--teal); background: rgba(56, 184, 197, .08); }
+      .social-links { display: flex; gap: .65rem; margin-top: 1.6rem; }
+      .social-links a { display: inline-flex; align-items: center; justify-content: center; min-height: 38px; padding: 0 .9rem; border: 1px solid #4a555b; border-radius: 999px; color: #e9edef; font: 600 .78rem "Inter", sans-serif; transition: .2s ease; }
+      .social-links a:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-2px); }
+      .project-card[hidden] { display: none; }
+      @media (max-width: 900px) {
+        .hero { min-height: auto; }
+        .nav { justify-content: flex-end; }
+        .nav-links { align-items: stretch; gap: 0.25rem; }
+        .nav-links a { min-height: 44px; padding: 0.5rem 0.6rem; }
+        .hero-grid { min-height: 0; grid-template-columns: 1fr; gap: 2rem; }
+        .hero-panel { min-height: 300px; }
+        .hero::before { background: linear-gradient(90deg, rgba(7, 9, 10, .92), rgba(7, 9, 10, .56)); }
+      }
+      @media (max-width: 640px) {
+        .hero-grid { padding: 4.5rem 0 3rem; }
+        .hero h1 { font-size: clamp(2.8rem, 13vw, 4rem); }
+        .hero-panel { min-height: 230px; }
+        .filter-row { margin-top: -1rem; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#content-start">Skip to content</a>
+    <header class="site-header">
+      <div class="container nav" id="nav">
+        <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+          <a href="#top">Home</a>
+          <a href="#about">About</a>
+          <a href="#resume">Resume</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false">☰</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" id="content-start" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">AI systems · automation · cloud</div>
+            <h1 id="hero-title">Prabin Rai<span class="hero-role">Aspiring AI Architect</span></h1>
+            <p>
+              I’m a Computer Science student focused on building <span class="highlight">AI-powered applications</span>,
+              <span class="highlight">intelligent automation workflows</span>, and <span class="highlight">scalable software systems</span>,
+              with a growing foundation in cloud engineering and system architecture.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#resume">Resume</a>
+              <a class="btn btn-secondary" href="#portfolio">Portfolio</a>
+              <a class="btn btn-plain" href="mailto:01prabin.rai@gmail.com">Contact</a>
+            </div>
+            <div class="hero-meta" aria-label="Profile details">
+              <span>Kathmandu, Nepal</span>
+              <span>Computer Science</span>
+            </div>
+            <div class="social-links" aria-label="GitHub profiles">
+              <a href="https://github.com/prabinsecai" target="_blank" rel="noopener noreferrer" aria-label="AI projects GitHub account">GitHub</a>
+              <a href="https://github.com/prabinraics" target="_blank" rel="noopener noreferrer" aria-label="Software and academic projects GitHub account">GitHub</a>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="workstation-visual">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;w=1200&amp;q=75" alt="" aria-hidden="true" fetchpriority="high" decoding="async" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker mono">01 — About</div>
+              <h2>Who I am</h2>
+            </div>
+          </div>
+
+          <div class="about-grid">
+            <div class="about-copy">
+              <p>
+                I am pursuing a <span class="highlight-ink">BSc (Hons) Computer Science</span> degree at
+                <span class="highlight-ink">Herald College Kathmandu</span>, awarded by the University of Wolverhampton,
+                and I am building practical AI and software development projects alongside my academic journey.
+              </p>
+              <p>
+                My work focuses on designing intelligent applications, developing reliable software systems, and exploring how AI,
+                backend engineering, and cloud infrastructure fit together in real-world solutions. I am growing my knowledge in
+                <span class="highlight-ink">cloud infrastructure, DevOps, Linux, networking, and deployment</span> while continuing to build projects that connect theory to practice.
+              </p>
+              <p>
+                I am working toward a long-term career as an <span class="highlight-ink">AI Architect</span>, where I can help design complete AI-enabled systems with strong foundations in data, integrations, APIs, infrastructure, deployment, and reliability.
+              </p>
+              <p>
+                My current professional focus is <span class="highlight-ink">AI Systems, Intelligent Automation &amp; Cloud Engineering</span>. I am developing these capabilities through coursework, certificates, and independent projects.
+              </p>
+            </div>
+
+            <aside class="focus-panel" aria-label="Engineering focus">
+              <h3>My Engineering Focus</h3>
+              <div class="focus-list">
+                <div class="focus-item">
+                  <strong>AI application design</strong>
+                  <span>GenAI • ML</span>
+                </div>
+                <div class="focus-item">
+                  <strong>Automation</strong>
+                  <span>Agents • APIs</span>
+                </div>
+                <div class="focus-item">
+                  <strong>Backend systems</strong>
+                  <span>Python • Java</span>
+                </div>
+                <div class="focus-item">
+                  <strong>Cloud &amp; deploy</strong>
+                  <span>AWS • Docker</span>
+                </div>
+                <div class="focus-item">
+                  <strong>Reliability &amp; security</strong>
+                  <span>Linux • Networking</span>
+                </div>
+                <div class="focus-item">
+                  <strong>Get in touch</strong>
+                  <span><a href="mailto:01prabin.rai@gmail.com">Email</a> · Kathmandu</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="resume">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker mono">02 — Resume</div>
+              <h2>Technical profile</h2>
+            </div>
+            <p class="section-deck">A concise view of my current foundations and the projects and education shaping my path toward AI architecture.</p>
+          </div>
+
+          <div class="focus-panel resume-experience">
+            <h3>Project experience · Independent builds</h3>
+            <p class="section-deck">Hands-on work across AI-assisted workflows, application development, automation, and cloud projects. These are personal and academic projects, not employment roles.</p>
+          </div>
+
+          <div class="skills-grid">
+            <article class="skill-card">
+              <h3>Software Skills · AI Systems</h3>
+              <div class="tag-row">
+                <span class="tag">Generative AI</span>
+                <span class="tag">AI agents</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Prompt Engineering</span>
+                <span class="tag">AI automation</span>
+              </div>
+            </article>
+
+            <article class="skill-card">
+              <h3>Software Engineering</h3>
+              <div class="tag-row">
+                <span class="tag">Python</span>
+                <span class="tag">Java</span>
+                <span class="tag">C</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">TypeScript (learning)</span>
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Backend Development</span>
+              </div>
+            </article>
+
+            <article class="skill-card">
+              <h3>Cloud and Infrastructure</h3>
+              <div class="tag-row">
+                <span class="tag">AWS</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Computer Networking</span>
+                <span class="tag">CI/CD</span>
+                <span class="tag">Deployment</span>
+              </div>
+            </article>
+
+            <article class="skill-card">
+              <h3>Data and Storage</h3>
+              <div class="tag-row">
+                <span class="tag">SQL</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Data handling</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker mono">03 — Portfolio</div>
+              <h2>Selected projects</h2>
+            </div>
+            <p class="section-deck">Practical projects spanning multi-agent workflows, intelligent automation, backend systems, and AI-enabled application design.</p>
+          </div>
+          <div class="filter-row" role="group" aria-label="Filter portfolio projects">
+            <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All work</button>
+            <button type="button" class="filter-btn" data-filter="AI" aria-pressed="false">AI systems</button>
+            <button type="button" class="filter-btn" data-filter="Automation" aria-pressed="false">Automation</button>
+            <button type="button" class="filter-btn" data-filter="Cloud" aria-pressed="false">Cloud</button>
+            <button type="button" class="filter-btn" data-filter="Software Engineering" aria-pressed="false">Software</button>
+          </div>
+          <p class="sr-only" id="project-filter-status" aria-live="polite"></p>
+          <div class="project-grid" id="projectGrid"></div>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="container education-wrap">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker mono">04 — Education</div>
+              <h2 class="education-title">Academic path</h2>
+            </div>
+          </div>
+
+          <ol class="education-list" aria-label="Education timeline">
+            <li class="education-item current">
+              <div class="education-year">Ongoing</div>
+              <h3>BSc Computer Science</h3>
+              <p>Herald College Kathmandu</p>
+            </li>
+
+            <li class="education-item">
+              <div class="education-year">2023</div>
+              <h3>+2 Science</h3>
+              <p>Trinity International College</p>
+            </li>
+
+            <li class="education-item">
+              <div class="education-year">2021</div>
+              <h3>SEE</h3>
+              <p>Siddhartha Vanasthali Institute</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker mono">05 — Certifications</div>
+              <h2>Learning and validation</h2>
+            </div>
+          </div>
+          <div class="cert-grid" id="certGrid"></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker mono">06 — Contact</div>
+              <h2>Let’s connect</h2>
+            </div>
+            <p class="section-deck">Open to internships, collaborative projects, and opportunities involving AI, cloud, and software engineering.</p>
+          </div>
+
+          <div class="contact-wrap">
+            <div class="contact-cards">
+              <div class="contact-card">
+                <span class="contact-label">Email</span>
+                <a class="contact-link" href="mailto:01prabin.rai@gmail.com">01prabin.rai@gmail.com</a>
+              </div>
+
+              <div class="contact-card">
+                <span class="contact-label">Location</span>
+                <div class="contact-link">Kathmandu, Nepal</div>
+              </div>
+
+              <div class="contact-card">
+                <span class="contact-label">Phone</span>
+                <a class="contact-link" href="tel:+9779813584975">+977 981-358-4975</a>
+              </div>
+
+              <div class="contact-card">
+                <span class="contact-label">GitHub</span>
+                <div class="github-links">
+                  <div class="github-card">
+                    <strong>AI Projects &amp; Systems</strong>
+                    <a href="https://github.com/prabinsecai" target="_blank" rel="noopener noreferrer">github.com/prabinsecai</a>
+                  </div>
+                  <div class="github-card">
+                    <strong>Software &amp; Academic Projects</strong>
+                    <a href="https://github.com/prabinraics" target="_blank" rel="noopener noreferrer">github.com/prabinraics</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-box">
+              <form class="contact-form" id="contact-form">
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" type="text" name="name" placeholder="Your name" autocomplete="name" minlength="2" maxlength="100" required />
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" type="email" name="email" placeholder="Your email" autocomplete="email" maxlength="254" required />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell me about your project or opportunity" minlength="10" maxlength="5000" required></textarea>
+                </div>
+                <p class="form-note">Your message will be sent directly to 01prabin.rai@gmail.com.</p>
+                <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
+                <button type="submit" class="btn btn-primary send-btn">Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>© 2026 Prabin Rai</div>
+        <div>Building toward AI architecture</div>
+      </div>
+    </footer>
+
+    <script>
+      const escapeHtml = (value = '') => String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+
+      const projects = [
+        {
+          title: 'NextWave CRM — Multi-Agent AI Release Readiness System',
+          category: 'AI Systems',
+          description: 'A multi-agent release-readiness system for CRM workflows, combining AI-driven assessment, structured reasoning, and operational planning for release validation tasks.',
+          tags: ['AI agents', 'CRM', 'Workflow automation', 'LLM-assisted review'],
+          repo: 'https://github.com/prabinsecai/NextWave-CRM-v2.5-Multi-Agent-AI-Release-Readiness-System',
+          demo: 'https://prabinsecai.github.io/NextWave-CRM-v2.5-Multi-Agent-AI-Release-Readiness-System/'
+        },
+        {
+          title: 'AI Property Sales Automation',
+          category: 'AI Systems',
+          description: 'A property enquiry platform combining natural-language search, retrieval-augmented responses, lead qualification, and human escalation.',
+          tags: ['AI automation', 'Backend APIs', 'Data workflow', 'Property sales'],
+          repo: 'https://github.com/prabinsecai/ai-property-sales-automation'
+        },
+        {
+          title: 'Multimodal SRE — AI-Powered Incident Investigation and Remediation Platform',
+          category: 'AI Systems',
+          description: 'An AI-assisted platform focused on incident investigation, troubleshooting workflows, and reliability-oriented system analysis for modern operations teams.',
+          tags: ['SRE', 'AI operations', 'Incident analysis', 'System reliability'],
+          repo: 'https://github.com/prabinsecai/Multimodal-SRE-AI-Powered-Incident-Investigation-Remediation-Platform'
+        },
+        {
+          title: 'AI Marketing Automation Platform',
+          category: 'Automation',
+          description: 'An AI-assisted campaign workflow for strategy and multi-channel content, with approval steps and LangGraph/n8n execution paths.',
+          tags: ['Marketing automation', 'Backend', 'AI workflow', 'Web app'],
+          repo: 'https://github.com/prabinsecai/ai-marketing-automation-platform'
+        },
+        {
+          title: 'School Notice SMS Automation',
+          category: 'Automation',
+          description: 'A workflow-based communication prototype that turns approved campaign data into SMS notices using automation tools and API-based delivery. Prototype under testing; not presented as production deployment.',
+          tags: ['n8n', 'Google Sheets', 'TextBee API', 'Automation'],
+          repo: 'https://github.com/prabinsecai/school-notice-sms-automation',
+          demo: 'https://prabinsecai.github.io/school-notice-sms-automation/'
+        },
+        {
+          title: 'Clinic Appointment Scheduling System',
+          category: 'Software Engineering',
+          description: 'A full-stack clinic booking platform for managing appointments, users, and structured operational data in a practical web application.',
+          tags: ['Full-stack', 'PHP', 'MySQL', 'Appointment system'],
+          repo: 'https://github.com/prabinraics/Clinic-Appointment-Scheduling-System-'
+        },
+        {
+          title: 'AWS Lambda Morning Email Reminder',
+          category: 'Cloud',
+          description: 'A serverless reminder system built with AWS Lambda to automate recurring email workflows and reduce manual follow-up steps.',
+          tags: ['AWS Lambda', 'Serverless', 'Automation', 'Email workflow'],
+          repo: 'https://github.com/prabinraics/AWS-Lambda-Morning-Email-Reminder'
+        },
+        {
+          title: 'Classification AI Final',
+          category: 'AI / ML',
+          description: 'A machine learning project focused on classification and prediction tasks, developing hands-on understanding of model development and evaluation.',
+          tags: ['Python', 'Machine Learning', 'Classification', 'Data science'],
+          repo: 'https://github.com/prabinraics/Classification_AI_Final'
+        }
+      ];
+
+      const certifications = [
+        {
+          name: 'Exploring Adversarial Machine Learning',
+          issuer: 'NVIDIA Deep Learning Institute (DLI)',
+          id: null,
+          date: null,
+          description: 'Hands-on exploration of security-conscious ML practices, adversarial learning concepts, and model robustness thinking.',
+          topics: ['Adversarial ML', 'Model robustness', 'AI security'],
+          verifyUrl: 'https://learn.nvidia.com/certificates?id=cm7GbzaRRr6xMBlR8r_mrw'
+        },
+        {
+          name: 'AWS Academy Graduate — Cloud Architecting',
+          issuer: 'Amazon Web Services (AWS)',
+          id: 'Training Badge',
+          date: null,
+          description: 'Credential earned through AWS Academy training in cloud architecture principles and cloud design thinking.',
+          topics: ['Cloud architecture', 'AWS', 'Infrastructure design'],
+          verifyUrl: null
+        },
+        {
+          name: 'PAIR — Pexus AI Readiness Program',
+          issuer: 'Pexus',
+          id: 'PX26H3TGJCWC6maO',
+          date: null,
+          description: 'Completed a structured AI readiness program covering applied AI, AI automation with n8n, prompt engineering, and practical AI workflow development.',
+          topics: ['Applied AI', 'AI automation', 'Prompt engineering', 'AI foundations'],
+          verifyUrl: 'https://certify-api.ingtech.io/validate-certificate/?code=PX26H3TGJCWC6maO'
+        },
+        {
+          name: 'DevOps Bootcamp Certificate',
+          issuer: 'Herald College Kathmandu',
+          id: null,
+          date: null,
+          description: 'Practical learning in modern DevOps workflows, systems operations, and software delivery practices.',
+          topics: ['DevOps', 'Deployment', 'Automation'],
+          verifyUrl: null
+        },
+        {
+          name: 'Data Analytics and Visualization Certificate',
+          issuer: 'Herald College Kathmandu',
+          id: 'HCKCS4S250078BEY2Y',
+          date: 'October 2026',
+          description: 'Credential documenting data analysis and visualization work with a focus on interpretation and communication of data-driven insights.',
+          topics: ['Data analytics', 'Visualization', 'Reporting'],
+          verifyUrl: 'https://certificate.heraldcollege.edu.np/certificate/verify/HCKCS4S250078BEY2Y'
+        },
+        {
+          name: 'Enterprise Web Systems Development Certificate',
+          issuer: 'Herald College Kathmandu',
+          id: 'HCKCS4S250078XRYHQ',
+          date: 'August 2026',
+          description: 'Certificate focused on professional web systems development practices, application building, and system-level thinking.',
+          topics: ['Web systems', 'Development', 'Software engineering'],
+          verifyUrl: null
+        },
+        {
+          name: 'Computer Networks Certificate',
+          issuer: 'Herald College Kathmandu',
+          id: 'HCKCS4S250078DL4W0',
+          date: 'February 2026',
+          description: 'Credential in networking concepts, systems communication, and foundational network architecture understanding.',
+          topics: ['Networking', 'Protocols', 'System communication'],
+          verifyUrl: null
+        },
+        {
+          name: 'Ethical Hacking with AI System Certificate',
+          issuer: 'Herald College Kathmandu',
+          id: 'HCKCS4S250078KSIYB',
+          date: 'July 2026',
+          description: 'Certificate focused on ethical hacking practices supported by AI-assisted systems and secure thinking in modern digital environments.',
+          topics: ['Ethical hacking', 'AI systems', 'Cybersecurity'],
+          verifyUrl: null
+        }
+      ];
+
+      function renderProjects() {
+        const root = document.getElementById('projectGrid');
+        root.innerHTML = projects.map((project, index) => {
+          const tagMarkup = project.tags.map(tag => `<span class="tag">${escapeHtml(tag)}</span>`).join('');
+          const repoLink = `<a class="project-link" href="${project.repo}" target="_blank" rel="noopener noreferrer">View Repository</a>`;
+          const demoLink = project.demo ? `<a class="project-link" href="${project.demo}" target="_blank" rel="noopener noreferrer">Live Demo</a>` : '';
+
+          return `
+            <article class="project-card" data-category="${escapeHtml(project.category)}">
+              <div class="project-top">
+                <h3>${escapeHtml(project.title)}</h3>
+                <span class="project-number" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span>
+              </div>
+              <span class="project-category">${escapeHtml(project.category)}</span>
+              <p>${escapeHtml(project.description)}</p>
+              <div class="tag-row">${tagMarkup}</div>
+              <div class="project-links">
+                ${repoLink}
+                ${demoLink}
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      function renderCertifications() {
+        const root = document.getElementById('certGrid');
+        root.innerHTML = certifications.map((cert) => {
+          const topicMarkup = cert.topics.map(topic => `<span class="tag">${escapeHtml(topic)}</span>`).join('');
+          const credentialMeta = [cert.id, cert.date]
+            .filter(Boolean)
+            .map(value => `<span class="cert-id">${escapeHtml(value)}</span>`)
+            .join('');
+          const verifyLink = cert.verifyUrl
+            ? `<a class="verify-btn" href="${cert.verifyUrl}" target="_blank" rel="noopener noreferrer">Verify Credential</a>`
+            : '';
+          const credentialFoot = credentialMeta || verifyLink
+            ? `<div class="cert-foot"><div>${credentialMeta}</div>${verifyLink}</div>`
+            : '';
+
+          return `
+            <article class="cert-card">
+              <div class="cert-issuer">Issued by ${escapeHtml(cert.issuer)}</div>
+              <h3>${escapeHtml(cert.name)}</h3>
+              <p>${escapeHtml(cert.description)}</p>
+              <div class="cert-meta">${topicMarkup}</div>
+              ${credentialFoot}
+            </article>
+          `;
+        }).join('');
+      }
+
+      renderProjects();
+      renderCertifications();
+
+      const projectFilterButtons = document.querySelectorAll('.filter-btn');
+      const projectFilterStatus = document.getElementById('project-filter-status');
+      const projectCards = document.querySelectorAll('.project-card');
+      const aiProjectCategories = new Set(['AI Systems', 'AI / ML']);
+      projectFilterButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter;
+          let visibleCount = 0;
+
+          projectFilterButtons.forEach((filterButton) => {
+            filterButton.setAttribute('aria-pressed', String(filterButton === button));
+          });
+          projectCards.forEach((card) => {
+            const category = card.dataset.category;
+            const matches = filter === 'all'
+              || (filter === 'AI' && aiProjectCategories.has(category))
+              || category === filter;
+            card.hidden = !matches;
+            if (matches) visibleCount += 1;
+          });
+          projectFilterStatus.textContent = `${visibleCount} project${visibleCount === 1 ? '' : 's'} shown.`;
+        });
+      });
+
+      const contactForm = document.getElementById('contact-form');
+      const contactStatus = document.getElementById('contact-form-status');
+      const contactSubmit = contactForm.querySelector('button[type="submit"]');
+      const contactSubmitLabel = contactSubmit.textContent;
+
+      contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        contactStatus.textContent = '';
+        contactStatus.removeAttribute('data-state');
+
+        // Trim text fields before checking native required/minlength constraints.
+        ['name', 'email', 'message'].forEach((fieldName) => {
+          const field = contactForm.elements[fieldName];
+          field.value = field.value.trim();
+        });
+        if (!contactForm.reportValidity()) return;
+
+        contactSubmit.disabled = true;
+        contactSubmit.textContent = 'Sending…';
+        contactForm.setAttribute('aria-busy', 'true');
+        contactStatus.textContent = 'Sending your message…';
+        const requestController = new AbortController();
+        const requestTimeout = window.setTimeout(() => requestController.abort(), 15000);
+
+        try {
+          const response = await fetch('https://formsubmit.co/ajax/01prabin.rai@gmail.com', {
+            method: 'POST',
+            signal: requestController.signal,
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              name: contactForm.elements.name.value,
+              email: contactForm.elements.email.value,
+              _replyto: contactForm.elements.email.value,
+              _subject: `Portfolio contact from ${contactForm.elements.name.value}`,
+              _template: 'table',
+              message: contactForm.elements.message.value
+            })
+          });
+          const responseText = await response.text();
+          let result = {};
+          try {
+            result = JSON.parse(responseText);
+          } catch (_) {
+            result = { message: responseText };
+          }
+          if (!response.ok || (result.success !== true && result.success !== 'true')) {
+            const reason = String(result.message || result.error || 'The email service did not accept the message.').trim();
+            if (/activat|confirm|verif/i.test(reason)) {
+              throw new Error('activation');
+            }
+            throw new Error(reason.slice(0, 180));
+          }
+          contactStatus.dataset.state = 'success';
+          contactStatus.textContent = 'Thanks! Your message was accepted for delivery.';
+          contactForm.reset();
+        } catch (error) {
+          contactStatus.dataset.state = 'error';
+          if (error.message === 'activation') {
+            contactStatus.textContent = 'Email delivery needs one-time activation. Check 01prabin.rai@gmail.com for FormSubmit’s confirmation email, then try again.';
+          } else if (error.name === 'AbortError') {
+            contactStatus.textContent = 'The request timed out. Please try again, or email 01prabin.rai@gmail.com directly.';
+          } else if (error instanceof TypeError) {
+            contactStatus.textContent = 'Could not connect to the email service. Check your connection and try again, or email 01prabin.rai@gmail.com directly.';
+          } else {
+            contactStatus.textContent = `Message could not be sent: ${error.message} Please try again or email 01prabin.rai@gmail.com directly.`;
+          }
+        } finally {
+          window.clearTimeout(requestTimeout);
+          contactSubmit.disabled = false;
+          contactSubmit.textContent = contactSubmitLabel;
+          contactForm.removeAttribute('aria-busy');
+        }
+      });
+
+      const navEl = document.getElementById('nav');
+      const navToggle = document.querySelector('.nav-toggle');
+      navToggle.addEventListener('click', () => {
+        const isOpen = navEl.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      });
+      navEl.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navEl.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Open navigation menu');
+        });
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && navEl.classList.contains('open')) {
+          navEl.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.setAttribute('aria-label', 'Open navigation menu');
+          navToggle.focus();
+        }
+      });
+    </script>
+  </body>
+</html>
